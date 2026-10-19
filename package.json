@@ -1,0 +1,112 @@
+{
+    "name": "sso-landing-page",
+    "version": "1.0.0",
+    "private": true,
+    "dependencies": {
+        "@date-io/date-fns": "^3.2.1",
+        "@emotion/cache": "^11.10.3",
+        "@emotion/react": "^11.10.4",
+        "@emotion/styled": "^11.10.4",
+        "@goongmaps/goong-js": "^1.0.9",
+        "@hookform/resolvers": "^3.2.0",
+        "@mui/icons-material": "^5.10.6",
+        "@mui/lab": "^5.0.0-alpha.98",
+        "@mui/material": "^5.10.4",
+        "@mui/styles": "^5.13.7",
+        "@mui/system": "^5.10.4",
+        "@mui/utils": "^5.10.3",
+        "@mui/x-date-pickers": "^8.12.0",
+        "@mui/x-date-pickers-pro": "^8.12.0",
+        "@tabler/icons": "^1.92.0",
+        "@tabler/icons-react": "^3.34.0",
+        "@tanstack/react-query": "^4.32.6",
+        "@types/node": "^20.5.0",
+        "@types/qs": "^6.9.7",
+        "@types/react-slick": "^0.23.10",
+        "axios": "^1.7.2",
+        "crypto-browserify": "^3.12.0",
+        "csstype": "^3.1.0",
+        "date-fns": "^4.1.0",
+        "framer-motion": "^7.2.1",
+        "i18next": "^23.4.3",
+        "i18next-http-backend": "^2.2.1",
+        "jspdf": "^3.0.3",
+        "jwt-decode": "^4.0.0",
+        "maplibre-gl": "^5.8.0",
+        "notistack": "^3.0.2",
+        "qrcode.react": "^4.2.0",
+        "qs": "^6.11.2",
+        "react": "^18.2.0",
+        "react-color": "^2.19.3",
+        "react-dom": "^18.2.0",
+        "react-hook-form": "^7.34.2",
+        "react-hot-toast": "^2.4.1",
+        "react-i18next": "^13.0.3",
+        "react-icons": "^4.10.1",
+        "react-images": "^1.2.0-beta.7",
+        "react-intersection-observer": "^9.4.0",
+        "react-router-dom": "^6.3.0",
+        "react-slick": "^0.29.0",
+        "slick-carousel": "^1.8.1",
+        "uuid": "^9.0.0",
+        "zod": "^3.21.4"
+    },
+    "scripts": {
+        "dev": "vite",
+        "build": "vite build --base=./",
+        "lint": "eslint --ext .ts,.tsx ./src"
+    },
+    "eslintConfig": {
+        "extends": [
+            "react-app",
+            "react-app/jest"
+        ]
+    },
+    "babel": {
+        "presets": [
+            "@babel/preset-react"
+        ]
+    },
+    "browserslist": {
+        "production": [
+            ">0.2%",
+            "not dead",
+            "not op_mini all"
+        ],
+        "development": [
+            "last 1 chrome version",
+            "last 1 firefox version",
+            "last 1 safari version"
+        ]
+    },
+    "devDependencies": {
+        "@babel/core": "^7.19.0",
+        "@types/maplibre-gl": "^1.14.0",
+        "@types/react": "^18.0.20",
+        "@types/react-color": "^3.0.13",
+        "@types/react-dom": "^18.0.5",
+        "@types/react-router-dom": "^5.3.3",
+        "@types/uuid": "^10.0.0",
+        "@typescript-eslint/eslint-plugin": "^5.36.2",
+        "@typescript-eslint/parser": "^5.36.2",
+        "@vitejs/plugin-react": "^4.0.0",
+        "babel-eslint": "^10.1.0",
+        "eslint": "^8.19.0",
+        "eslint-config-airbnb-typescript": "^17.0.0",
+        "eslint-config-prettier": "^8.5.0",
+        "eslint-config-react-app": "^7.0.0",
+        "eslint-import-resolver-typescript": "^3.5.0",
+        "eslint-plugin-flowtype": "^8.0.3",
+        "eslint-plugin-import": "^2.26.0",
+        "eslint-plugin-jsx-a11y": "^6.6.1",
+        "eslint-plugin-prettier": "^4.2.1",
+        "eslint-plugin-react": "^7.30.1",
+        "eslint-plugin-react-hooks": "^4.6.0",
+        "prettier": "^2.7.1",
+        "sass": "^1.55.0",
+        "typescript": "^4.8.2",
+        "vite": "^4.3.9",
+        "vite-plugin-svgr": "^3.2.0",
+        "vite-tsconfig-paths": "^4.2.0"
+    }
+}

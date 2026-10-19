@@ -1,0 +1,156 @@
+import React, { useEffect, useState } from 'react';
+import { Accordion, AccordionSummary, AccordionDetails, TextField, Typography, Grid, Box, RadioGroup, FormControlLabel, Radio } from '@mui/material';
+import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
+
+type BitcoinFormProps = {
+    values: {
+        cryptoType?: string;
+        address?: string;
+        label?: string;
+        message?: string;
+        amount?: string;
+    };
+    onChange: (values: { cryptoType?: string; address?: string; label?: string; message?: string; amount?: string }) => void;
+};
+
+const BitcoinForm: React.FC<BitcoinFormProps> = ({ values, onChange }) => {
+    const [expanded, setExpanded] = useState<boolean>(true);
+    const handleFieldChange = (field: keyof typeof values, value: string) => {
+        onChange({ ...values, [field]: value });
+    };
+    const handleChange = (_: React.SyntheticEvent, isExpanded: boolean) => {
+        setExpanded(isExpanded);
+    };
+    useEffect(() => {
+        if (!values.cryptoType) {
+            onChange({ ...values, cryptoType: 'bitcoin' });
+        }
+    }, []);
+
+    return (
+        <Accordion defaultExpanded sx={{ mb: 2 }} expanded={expanded} onChange={handleChange}>
+           <AccordionSummary expandIcon={<ExpandMoreIcon />}>
+                <Typography
+                    fontWeight="bold"
+                    sx={{
+                        color: expanded ? '#00A64F' : '#4C4C4C',
+                        display: 'flex',
+                        alignItems: 'center',
+                        gap: 1,
+                        fontSize: '18px',
+                        fontWeight: expanded ? 600 : 500
+                    }}
+                >
+                    <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 40 40" fill="none">
+                        <rect width="40" height="40" rx="10" fill="#00A64F" />
+                        <path
+                            d="M20 30C25.5228 30 30 25.5228 30 20C30 14.4772 25.5228 10 20 10C14.4772 10 10 14.4772 10 20C10 25.5228 14.4772 30 20 30Z"
+                            stroke="white"
+                            strokeWidth="1.5"
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                        />
+                        <path
+                            d="M16.0001 11H17.0001C15.0501 16.84 15.0501 23.16 17.0001 29H16.0001"
+                            stroke="white"
+                            strokeWidth="1.5"
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                        />
+                        <path
+                            d="M23 11C24.95 16.84 24.95 23.16 23 29"
+                            stroke="white"
+                            strokeWidth="1.5"
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                        />
+                        <path
+                            d="M11 24V23C16.84 24.95 23.16 24.95 29 23V24"
+                            stroke="white"
+                            strokeWidth="1.5"
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                        />
+                        <path
+                            d="M11 17.0001C16.84 15.0501 23.16 15.0501 29 17.0001"
+                            stroke="white"
+                            strokeWidth="1.5"
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                        />
+                    </svg>{' '}
+                    NHẬP NỘI DUNG
+                </Typography>
+            </AccordionSummary>
+            <AccordionDetails>
+                <Box>
+                    <RadioGroup row value={values.cryptoType || "bitcoin"} onChange={(e) => handleFieldChange("cryptoType", e.target.value)}>
+                        {/* Bitcoin */}
+                        <FormControlLabel
+                            value="bitcoin"
+                            control={<Radio />}
+                            label={
+                                <Box display="flex" alignItems="center" gap={1}>
+                                    <Typography>Bitcoin</Typography>
+                                </Box>
+                            }
+                        />
+
+                        {/* Ethereum */}
+                        <FormControlLabel
+                            value="ethereum"
+                            control={<Radio />}
+                            label={
+                                <Box display="flex" alignItems="center" gap={1}>
+                                    <Typography>Ethereum</Typography>
+                                </Box>
+                            }
+                        />
+                    </RadioGroup>
+                </Box>
+            </AccordionDetails>
+            <AccordionDetails>
+                <label>Address / Wallet Address</label>
+                <TextField
+                    fullWidth
+                    placeholder="Enter your wallet address"
+                    size="small"
+                    value={values.address || ''}
+                    onChange={(e) => handleFieldChange('address', e.target.value)}
+                />
+            </AccordionDetails>
+            <AccordionDetails>
+                <label>Label (optional)</label>
+                <TextField
+                    fullWidth
+                    placeholder="Enter a label (e.g., recipient name)"
+                    size="small"
+                    value={values.label || ''}
+                    onChange={(e) => handleFieldChange('label', e.target.value)}
+                />
+            </AccordionDetails>
+            <AccordionDetails>
+                <label>Message (optional)</label>
+                <TextField
+                    fullWidth
+                    placeholder="Enter a message or reference"
+                    size="small"
+                    value={values.message || ''}
+                    onChange={(e) => handleFieldChange('message', e.target.value)}
+                />
+            </AccordionDetails>
+            <AccordionDetails>
+                <label>Amount (optional)</label>
+                <TextField
+                    fullWidth
+                    placeholder="Enter amount (e.g., 0.001 BTC or ETH)"
+                    size="small"
+                    value={values.amount || ''}
+                    onChange={(e) => handleFieldChange('amount', e.target.value)}
+                />
+            </AccordionDetails>
+        </Accordion>
+    );
+};
+
+export default BitcoinForm;

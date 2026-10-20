@@ -31,7 +31,7 @@ import wifi from '@/assets/images/wifi.png';
 import email from '@/assets/images/email.png';
 import text from '@/assets/images/texticon.jpg';
 import phone from '@/assets/images/phone1.png';
-import sms from '@/assets/images/sms.jpg';
+import sms from '@/assets/images/SMS.jpg';
 import card from '@/assets/images/card.png';
 
 

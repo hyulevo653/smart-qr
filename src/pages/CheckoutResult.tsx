@@ -1,5 +1,3 @@
-'use client';
-
 import { useSearchParams, useNavigate } from 'react-router-dom';
 import { Container, Box, Typography, Paper, Button, Grid, Divider } from '@mui/material';
 import CheckCircleOutlineIcon from '@mui/icons-material/CheckCircleOutline';
